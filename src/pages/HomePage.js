@@ -6,14 +6,13 @@ import Navigation from "../components/Navigation";
 const HomePage = () => {
     return (
         <div>
-            <Navigation />
+            {/* <Navigation /> */}
             <Banner />
-            <Title title="Welcome to our" />
-            <Navigation />
+            {/* <Title title="Welcome to our HomePage" /> */}
+            {/* <Navigation /> */}
+       <p>Home Page</p>
         </div>
-)
-
-
+    ); // Added missing closing parenthesis
 }
 
 export default HomePage;

@@ -6,6 +6,7 @@ import ContactUs from './pages/ContactUs'; // Placeholder for other pages
 
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -13,6 +14,7 @@ function App() {
         {Array.from({ length: 5 }, (_, i) => (
           <Route key={i} path={`/placeholder${i + 1}`} element={<div>Placeholder Page {i + 1}</div>} />
         ))}
+      
       </Routes>
     </Router>
   );
