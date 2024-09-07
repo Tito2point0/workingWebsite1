@@ -8,8 +8,8 @@ const HomePage = () => {
         <div>
             {/* <Navigation /> */}
             <Banner />
-            {/* <Title title="Welcome to our HomePage" /> */}
-            {/* <Navigation /> */}
+                <Title title="Welcome to our HomePage" />
+            <Navigation />
        <p>Home Page</p>
         </div>
     ); // Added missing closing parenthesis
