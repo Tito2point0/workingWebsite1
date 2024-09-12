@@ -1,4 +1,3 @@
-// src/pages/ContactUs.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -46,6 +45,11 @@ const Button = styled.button`
   &:hover {
     background-color: #005bb5;
   }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
 `;
 
 const ContactUs = () => {
@@ -54,25 +58,39 @@ const ContactUs = () => {
     email: '',
     message: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic (e.g., send data to an API)
-    console.log('Form submitted:', formData);
-    alert('Thank you for reaching out!');
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+    setIsLoading(true);
+    setErrorMessage('');
+    setSuccessMessage('');
+
+    try {
+      const response = await fetch('http://localhost:5000/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Message sent successfully!');
+      } else {
+        setErrorMessage('Error sending message.');
+      }
+    } catch (error) {
+      setErrorMessage('Error: ' + error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -103,7 +121,11 @@ const ContactUs = () => {
           onChange={handleChange}
           required
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? 'Sending...' : 'Submit'}
+        </Button>
+        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
       </Form>
     </ContactContainer>
   );
