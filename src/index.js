@@ -1,12 +1,12 @@
 // src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';  // Optional, for global styles
+import ReactDOM from 'react-dom/client';
 import App from './App';
 
-ReactDOM.render(
+// New API for React 18
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
