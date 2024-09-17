@@ -64,6 +64,8 @@ const Navigation = () => {
       <NavLinksContainer isOpen={isOpen}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/contact-us">Contact Us</NavLink>
+        <NavLink to="/ads">Ads</NavLink>
+        <NavLink to="/search">Search</NavLink>
         {[...Array(5)].map((_, i) => (
           <NavLink key={i} to={`/placeholder${i + 1}`}>
             Placeholder {i + 1}
