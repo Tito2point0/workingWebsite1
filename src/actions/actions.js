@@ -1,3 +1,60 @@
+// // src/actions/action.js
+// import axios from 'axios';
+
+// export const FETCH_POKEMON_REQUEST = 'FETCH_POKEMON_REQUEST';
+// export const FETCH_POKEMON_SUCCESS = 'FETCH_POKEMON_SUCCESS';
+// export const FETCH_POKEMON_FAILURE = 'FETCH_POKEMON_FAILURE';
+
+// export const fetchPokemonRequest = () => ({
+//   type: FETCH_POKEMON_REQUEST,
+// });
+
+// export const fetchPokemonSuccess = (pokemon, next = null, previous = null) => ({
+//   type: FETCH_POKEMON_SUCCESS,
+//   payload: { pokemon, next, previous },
+// });
+
+// export const fetchPokemonFailure = (error) => ({
+//   type: FETCH_POKEMON_FAILURE,
+//   payload: error,
+// });
+
+// export const fetchPokemon = (searchTerm = '', page = 1, limit = 10) => {
+//   return (dispatch) => {
+//     dispatch(fetchPokemonRequest());
+
+//     const offset = (page - 1) * limit;
+//     let url = `https://api.pokemontcg.io/v2/cards?limit=${limit}&offset=${offset}`;
+
+//     if (searchTerm) {
+//       // Modify URL to search by name if a search term is provided
+//       url = `https://api.pokemontcg.io/v2/cards?q=name:${searchTerm}`;
+//     }
+
+//     axios
+//       .get(url)
+//       .then((response) => {
+//         console.log("API Response: ", response.data);
+//         console.log("API Response Data: ", response.data.data);
+
+//         // Handle paginated response
+//         if (response.data.hasOwnProperty('data')) {
+//           // This is likely a paginated result
+//           const { data, next, previous } = response.data;
+//           dispatch(fetchPokemonSuccess(data, next, previous));
+//         } else {
+//           // Handle non-paginated response (search by name)
+//           dispatch(fetchPokemonSuccess([response.data]));
+//         }
+//       })
+//       .catch((error) => {
+//         console.log("API Error: ", error.message);
+//         dispatch(fetchPokemonFailure(error.message));
+//       });
+//   };
+// };
+
+
 // actions.js
 import axios from 'axios';
 

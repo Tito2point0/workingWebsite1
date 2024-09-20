@@ -2,6 +2,8 @@ import React from "react";
 
 const PokeData = ({ pokemon }) => {
   return (
+
+    console.log(pokemon),
     <div className="pokemon-card">
       <h3>Name: {pokemon.name}</h3>
       <p>ID: {pokemon.id}</p>
@@ -9,9 +11,9 @@ const PokeData = ({ pokemon }) => {
       <p>Level: {pokemon.level}</p>
       <p>HP: {pokemon.hp}</p>
       {/* <p>Type: {pokemon.types.join(", ")}</p>
-
       {pokemon.subtypes && <p>Subtypes: {pokemon.subtypes.join(", ")}</p>} */}
-
+    
+      
       {pokemon.abilities && (
         <div className="container">
           <h4>Abilities:</h4>
