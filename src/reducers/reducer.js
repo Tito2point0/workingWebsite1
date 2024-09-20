@@ -5,6 +5,8 @@ const initialState = {
   pokemon: [],
   loading: false,
   error: '',
+  next: null,
+  previous: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,7 +22,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         pokemon: action.payload,
-        error: null,
+        next: action.payload.next,
+        previous: action.payload.previous,
       };
     case FETCH_POKEMON_FAILURE:
       return {

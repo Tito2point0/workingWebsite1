@@ -1,9 +1,8 @@
-// src/components/PokeSearchForm.js
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { fetchPokemon } from "../actions/actions";
 
-const PokeSearchForm = (props) => {
+function PokeSearchForm(props) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSubmit = (e) => {
@@ -18,18 +17,15 @@ const PokeSearchForm = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Search Pokémon by Name"
-        />
-        <button type="submit">Search</button>
+        <input onChange={handleChange} />
+        <button className="button" type="submit">
+          <span className="button-text">Search By Name</span>
+          {props.loading && <div className="spinner"></div>}
+        </button>
       </form>
-      {props.loading && <p>Loading...</p>}
     </div>
   );
-};
+}
 
 const mapStateToProps = (state) => ({
   loading: state.loading,
