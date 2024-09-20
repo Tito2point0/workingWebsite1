@@ -14,7 +14,6 @@ function App() {
         <Route path="/ads" element={<Advertisement />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/search" element={<SearchPage />} /> {/* Added search page */}
-        
       </Routes>
     </Router>
   );
