@@ -9,6 +9,7 @@ const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => 
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
+  
   useEffect(() => {
     fetchPokemon(searchTerm, currentPage);
   }, [searchTerm, currentPage, fetchPokemon]);

@@ -1,22 +1,22 @@
 import React from "react";
 
-const PokeData = ({ pokemons }) => {
+const PokeData = ({ pokemon }) => {
   return (
-    <div className="pokemons-card">
-      <h3>Name: {pokemons.name}</h3>
-      <p>ID: {pokemons.id}</p>
-      <p>Supertype: {pokemons.supertype}</p>
-      <p>Level: {pokemons.level}</p>
-      <p>HP: {pokemons.hp}</p>
-      {/* <p>Type: {pokemons.types.join(", ")}</p>
+    <div className="pokemon-card">
+      <h3>Name: {pokemon.name}</h3>
+      <p>ID: {pokemon.id}</p>
+      <p>Supertype: {pokemon.supertype}</p>
+      <p>Level: {pokemon.level}</p>
+      <p>HP: {pokemon.hp}</p>
+      {/* <p>Type: {pokemon.types.join(", ")}</p>
 
-      {pokemons.subtypes && <p>Subtypes: {pokemons.subtypes.join(", ")}</p>} */}
+      {pokemon.subtypes && <p>Subtypes: {pokemon.subtypes.join(", ")}</p>} */}
 
-      {pokemons.abilities && (
+      {pokemon.abilities && (
         <div className="container">
           <h4>Abilities:</h4>
           <ul>
-            {pokemons.abilities.map((ability, index) => (
+            {pokemon.abilities.map((ability, index) => (
               <li key={index}>
                 <strong>Name:</strong> {ability.name}
                 <br />
@@ -30,11 +30,11 @@ const PokeData = ({ pokemons }) => {
         </div>
       )}
 
-      {pokemons.attacks && (
+      {pokemon.attacks && (
         <div className="container">
           <h4>Attacks:</h4>
           <ul>
-            {pokemons.attacks.map((attack, index) => (
+            {pokemon.attacks.map((attack, index) => (
               <li key={index}>
                 <strong>Name:</strong> {attack.name}
                 <br />
@@ -53,11 +53,11 @@ const PokeData = ({ pokemons }) => {
         </div>
       )}
 
-      {pokemons.weaknesses && (
+      {pokemon.weaknesses && (
         <div className="container">
           <h4>Weaknesses:</h4>
           <ul>
-            {pokemons.weaknesses.map((weakness, index) => (
+            {pokemon.weaknesses.map((weakness, index) => (
               <li key={index}>
                 <strong>Type:</strong> {weakness.type}
                 <br />
@@ -69,11 +69,11 @@ const PokeData = ({ pokemons }) => {
         </div>
       )}
 
-      {pokemons.resistances && (
+      {pokemon.resistances && (
         <div className="container">
           <h4>Resistances:</h4>
           <ul>
-            {pokemons.resistances.map((resistance, index) => (
+            {pokemon.resistances.map((resistance, index) => (
               <li key={index}>
                 <strong>Type:</strong> {resistance.type}
                 <br />
@@ -85,82 +85,82 @@ const PokeData = ({ pokemons }) => {
         </div>
       )}
 
-      {pokemons.retreatCost && (
-        <p className="section">Retreat Cost: {pokemons.retreatCost.join(", ")}</p>
+      {pokemon.retreatCost && (
+        <p className="section">Retreat Cost: {pokemon.retreatCost.join(", ")}</p>
       )}
 
-      {pokemons.set && (
+      {pokemon.set && (
         <div className="container">
           <h4>Set Details:</h4>
-          <p>ID: {pokemons.set.id}</p>
-          <p>Name: {pokemons.set.name}</p>
-          <p>Series: {pokemons.set.series}</p>
-          <p>Release Date: {pokemons.set.releaseDate}</p>
+          <p>ID: {pokemon.set.id}</p>
+          <p>Name: {pokemon.set.name}</p>
+          <p>Series: {pokemon.set.series}</p>
+          <p>Release Date: {pokemon.set.releaseDate}</p>
            <div className="icon">
-          <img src={pokemons.set.images.symbol} alt="Set Symbol" />
-            <img src={pokemons.set.images.logo} alt="Set Logo" />
+          <img src={pokemon.set.images.symbol} alt="Set Symbol" />
+            <img src={pokemon.set.images.logo} alt="Set Logo" />
           </div>
         </div>
       )}
 
-      {pokemons.evolvesFrom && <p>Evolves From: {pokemons.evolvesFrom}</p>}
-      {pokemons.rarity && <p>Rarity: {pokemons.rarity}</p>}
-      {pokemons.flavorText && <p>Flavor Text: {pokemons.flavorText}</p>}
+      {pokemon.evolvesFrom && <p>Evolves From: {pokemon.evolvesFrom}</p>}
+      {pokemon.rarity && <p>Rarity: {pokemon.rarity}</p>}
+      {pokemon.flavorText && <p>Flavor Text: {pokemon.flavorText}</p>}
 
-      {pokemons.nationalPokedexNumbers && (
+      {pokemon.nationalPokedexNumbers && (
         <div className="container">
           <h4>National Pokedex Numbers:</h4>
           <ul>
-            {pokemons.nationalPokedexNumbers.map((number, index) => (
+            {pokemon.nationalPokedexNumbers.map((number, index) => (
               <li key={index}>{number}</li>
             ))}
           </ul>
         </div>
       )}
 
-      {pokemons.legalities && (
+      {pokemon.legalities && (
         <div className="container">
           <h4>Legalities:</h4>
-          <p>Unlimited: {pokemons.legalities.unlimited}</p>
+          <p>Unlimited: {pokemon.legalities.unlimited}</p>
         </div>
       )}
 
-      {/* {pokemons.tcgplayer && (
+      {/* {pokemon.tcgplayer && (
         <div>
           <h4>TCGPlayer Data:</h4>
-          <p>URL: {pokemons.tcgplayer.url}</p>
-          <p>Updated At: {pokemons.tcgplayer.updatedAt}</p>
-          {pokemons.tcgplayer.prices && (
+          <p>URL: {pokemon.tcgplayer.url}</p>
+          <p>Updated At: {pokemon.tcgplayer.updatedAt}</p>
+          {pokemon.tcgplayer.prices && (
             <div>
               <h5>Prices:</h5>
-              <p>Low: {pokemons.tcgplayer.prices.holofoil.low}</p>
-              <p>Mid: {pokemons.tcgplayer.prices.holofoil.mid}</p>
-              <p>High: {pokemons.tcgplayer.prices.holofoil.high}</p>
-              <p>Market: {pokemons.tcgplayer.prices.holofoil.market}</p>
+              <p>Low: {pokemon.tcgplayer.prices.holofoil.low}</p>
+              <p>Mid: {pokemon.tcgplayer.prices.holofoil.mid}</p>
+              <p>High: {pokemon.tcgplayer.prices.holofoil.high}</p>
+              <p>Market: {pokemon.tcgplayer.prices.holofoil.market}</p>
             </div>
           )}
         </div>
       )} */}
 
-      {pokemons.cardmarket && (
+      {pokemon.cardmarket && (
         <div className="container2">
           <h4>CardMarket Data:</h4>
-          {/* <p>URL: {pokemons.cardmarket.url}</p>
-          <p>Updated At: {pokemons.cardmarket.updatedAt}</p> */}
-          {pokemons.cardmarket.prices && (
+          {/* <p>URL: {pokemon.cardmarket.url}</p>
+          <p>Updated At: {pokemon.cardmarket.updatedAt}</p> */}
+          {pokemon.cardmarket.prices && (
             <div>
               {/* <h5>Prices:</h5>
-              <p>Average Sell Price: {pokemons.cardmarket.prices.averageSellPrice}</p>
-              <p>Low Price: {pokemons.cardmarket.prices.lowPrice}</p>
-              <p>Trend Price: {pokemons.cardmarket.prices.trendPrice}</p>
-              <p>Images: {pokemons.images.small}</p>  */}
+              <p>Average Sell Price: {pokemon.cardmarket.prices.averageSellPrice}</p>
+              <p>Low Price: {pokemon.cardmarket.prices.lowPrice}</p>
+              <p>Trend Price: {pokemon.cardmarket.prices.trendPrice}</p>
+              <p>Images: {pokemon.images.small}</p>  */}
             </div>
           )}
-            {pokemons.images && (
+            {pokemon.images && (
         <div>
           <h4>Images:</h4>
-          <img className="centered-image red-border" src={pokemons.images.small} alt="Small" />
-          <img  className="centered-image red-border" src={pokemons.images.large} alt="Large" />
+          <img className="centered-image red-border" src={pokemon.images.small} alt="Small" />
+          <img  className="centered-image red-border" src={pokemon.images.large} alt="Large" />
         </div>
           )}
         </div>
@@ -176,15 +176,15 @@ export default PokeData;
 
 
 // const PokeData = props => {
-//   const { pokemons  } = props;
-//   const array = Object.keys(pokemons)
+//   const { pokemon  } = props;
+//   const array = Object.keys(pokemon)
 //   console.log(array)
 
 //   return (
-//     <div className="pokemons-card">
+//     <div className="pokemon-card">
 //       <h2>pokemonlisto</h2>
 //       <ol>
-//         {Object.keys(pokemons).map((item) => (
+//         {Object.keys(pokemon).map((item) => (
 //           <li key={item.id}>
 //             <strong className="opener">{item.name}</strong>
             
@@ -200,7 +200,7 @@ export default PokeData;
 
 // const mapStateToProps = state => {
 //   return {
-//     pokemons: state.pokemons,
+//     pokemon: state.pokemon,
 //     // Assuming you have this in your state
 //   };
 // };
