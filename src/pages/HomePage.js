@@ -46,7 +46,7 @@ const HomePage = () => {
         {/* Main content */}
         <ContentContainer>
           <BodyText>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat orci at arcu pretium facilisis. Nulla auctor est et volutpat blandit. Phasellus eget arcu nec enim interdum vehicula. Fusce vitae orci venenatis, egestas odio et, vulputate lectus.</p>
+            <p>Lorem ipsum dolor sit amet, begineth consectetur adipiscing elit. Curabitur placerat orci at arcu pretium facilisis. Nulla auctor est et volutpat blandit. Phasellus eget arcu nec enim interdum vehicula. Fusce vitae orci venenatis, egestas odio et, vulputate lectus.</p>
             <p>Sed consequat eros nec dolor pulvinar, non tincidunt purus molestie. Integer consectetur sem vel vehicula luctus. Aenean accumsan nunc ac velit pretium venenatis. Donec dapibus tortor nec velit vulputate, nec commodo lectus laoreet.</p>
             <p>Vivamus ultricies quam vel nisi fringilla, nec tincidunt libero aliquet. Etiam euismod ligula non nisi aliquet, sed tristique orci tempor.</p>
           </BodyText>
