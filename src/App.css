@@ -1,3 +1,4 @@
+/* App.css */
 .App {
   text-align: center;
 }
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(84, 22, 22);
 }
 
 .App-link {
@@ -36,3 +37,16 @@
     transform: rotate(360deg);
   }
 }
+
+body.dark-mode .App-header {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important
+}
+
+body.dark-mode .App-link {
+  color: #bb86fc !important;
+}
+
+
+/* Light Mode remains default */
+

@@ -6,6 +6,8 @@ import Title from "../components/Title";
 import Navigation from "../components/Navigation";
 import Advertisement from "../components/Advert";
 
+
+
 // Placeholder text component for fake content
 const BodyText = styled.div`
   padding: 20px;
