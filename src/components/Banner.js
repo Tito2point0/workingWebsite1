@@ -11,7 +11,7 @@ text-align: center;
 const Banner = () => { 
     return (
         <BannerContainer>
-            <h1>HomePage Banner</h1>
+            <h1>House of Cards</h1>
         </BannerContainer>
     )
 }
