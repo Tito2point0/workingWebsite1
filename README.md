@@ -1,5 +1,8 @@
 Pokémon Card Search & Daily Blog Website
+
+
 Project Overview
+
 This project is a React-based web application that serves as a platform to search for Pokémon cards and read daily blogs. The website allows users to search for cards from the Pokémon Trading Card Game (TCG) and provides options for browsing content via a responsive and user-friendly interface. Additionally, the website is styled with dark mode toggle functionality for enhanced user experience. It is currently hosted on IONOS with a custom domain.
 
 Features
