@@ -28,18 +28,13 @@ const ContentContainer = styled.div`
 `;
 
 // Advertisement sidebar container
-const AdSidebar = styled.div`
-  width: 25%; /* Width for the ad sidebar */
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-`;
+
 
 const HomePage = () => {
   return (
     <div>
       <Banner />
-      <Advertisement /> {/* Optional ad between Banner and Title */}
+      
       <Title title="Welcome to our HomePage" />
       <Navigation />
       
@@ -55,10 +50,7 @@ const HomePage = () => {
         </ContentContainer>
 
         {/* Advertisement on the side */}
-        <AdSidebar>
-          <Advertisement /> {/* Ad on the sidebar */}
-          <p>Advertisement Space</p>
-        </AdSidebar>
+        
       </LayoutContainer>
     </div>
   );
