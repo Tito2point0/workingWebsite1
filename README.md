@@ -71,28 +71,36 @@ Local Development
 Clone the repository and navigate into the project directory:
 bash
 
-git clone https://github.com/YourUsername/workingWebsite1.git
-cd YourRepo
+git clone https://github.com/Tito2point0/workingWebsite1.git
+cd workingWebsite1
 Install dependencies:
 bash
 
 npm install
+
 Start the local development server:
+
 bash
 
 npm start
+
+
 Deployment to IONOS (or other hosting)
 Create a production build:
 bash
 
 npm run build
+
+
 Use FileZilla or other FTP tools to upload the contents of the build/ folder to your server.
 Make sure to point your domain's root directory to the build/ folder if hosting manually.
-Future Improvements
+ 
+ 
+ Future Improvements:
 Improve Performance: Optimize images and use lazy loading to enhance site performance.
 Accessibility: Ensure that the website meets WCAG accessibility standards for users with disabilities.
 Automated Testing: Write Jest unit tests and Cypress end-to-end tests to ensure smooth functionality over time.
-Known Issues
+Known Issues:
 [ ] Banner issues on mobile: The banner may not scale correctly on smaller devices. Future updates will address this with media queries and better responsiveness.
 [ ] Metadata Caching Issues: Sometimes, changes to the metadata (such as the favicon or mobile icon) take time to propagate due to aggressive browser caching.
 How to Contribute
