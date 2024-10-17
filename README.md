@@ -61,14 +61,16 @@ root
 ├── README.md
 ├── package.json
 ├── .gitignore
+```
+
 <strong><font size="5">Deployment Instructions</font></strong>
 <strong>Local Development</strong>
 Clone the repository and navigate into the project directory:
 
 bash
 
-git clone https://github.com/YourUsername/YourRepo.git
-cd YourRepo
+git clone https://github.com/Tito2point0/workingWebsite1.git
+cd your repo
 Install dependencies:
 
 bash
@@ -90,6 +92,8 @@ Use FileZilla or other FTP tools to upload the contents of the build/ folder to 
 Point your domain's root directory to the build/ folder if hosting manually.
 
 <strong><font size="5">Future Improvements</font></strong>
+
+
 [ ] Improve Performance: Optimize images and use lazy loading to enhance site performance.
 [ ] Accessibility: Ensure that the website meets WCAG accessibility standards for users with disabilities.
 [ ] Automated Testing: Write Jest unit tests and Cypress end-to-end tests to ensure smooth functionality over time.
