@@ -95,14 +95,14 @@ Point your domain's root directory to the build/ folder if hosting manually.
 
 
 
-[ ] Improve Performance: Optimize images and use lazy loading to enhance site performance.
-[ ] Accessibility: Ensure that the website meets WCAG accessibility standards for users with disabilities.:
-[ ] Automated Testing: Write Jest unit tests and Cypress end-to-end tests to ensure smooth functionality over time.:
+-[ ] Improve Performance: Optimize images and use lazy loading to enhance site performance.
+-[ ] Accessibility: Ensure that the website meets WCAG accessibility standards for users with disabilities.:
+-[ ] Automated Testing: Write Jest unit tests and Cypress end-to-end tests to ensure smooth functionality over time.:
 
 <strong><font size="5">Known Issues</font></strong>
-[ ] Banner issues on mobile: The banner may not scale correctly on smaller devices. Future updates will address this with media queries and better responsiveness.:
+-[ ] Banner issues on mobile: The banner may not scale correctly on smaller devices. Future updates will address this with media queries and better responsiveness.:
 
-[ ] Metadata Caching Issues: Sometimes, changes to the metadata (such as the favicon or mobile icon) take time to propagate due to aggressive browser caching.:
+-[ ] Metadata Caching Issues: Sometimes, changes to the metadata (such as the favicon or mobile icon) take time to propagate due to aggressive browser caching.:
 
 <strong><font size="5">How to Contribute</font></strong>
 
