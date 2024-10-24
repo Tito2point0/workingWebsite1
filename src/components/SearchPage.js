@@ -3,41 +3,32 @@ import { connect } from 'react-redux';
 import PokeData from './PokeData';
 import { fetchPokemon } from '../actions/actions';
 import PokeSearchForm from './PokeSearchForm';
-import Banner from '../components/Banner'; // Import the banner
-import styled from 'styled-components';
+import Banner from '../components/Banner'; // Import the Banner component
+import styled from 'styled-components'; // Use styled-components for responsive design
 
-// Background image and page styling
+// Create a styled container for the page
 const SearchPageContainer = styled.div`
-  background-image: url('${process.env.PUBLIC_URL}/images/background.jpg'); /* Replace with your actual background image path */
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
+  width: 100%; /* Full width of the page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-
-  /* Responsive layout for mobile */
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
 `;
 
-// Responsive search results container
-const SearchResultsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+// Make sure the banner is responsive and takes full width
+const BannerContainer = styled.div`
+  width: 100%; /* Full width for the banner */
+  margin-bottom: 20px; /* Space between the banner and the rest of the page */
 
-  /* Ensure search results fit well on mobile */
   @media (max-width: 768px) {
-    gap: 10px;
-    flex-direction: column; /* Stack search results vertically on mobile */
+    margin-bottom: 15px; /* Adjust margin for mobile */
   }
 `;
 
 const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   useEffect(() => {
     fetchPokemon(searchTerm, currentPage);
   }, [searchTerm, currentPage, fetchPokemon]);
@@ -59,10 +50,15 @@ const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => 
     }
   };
 
+  // Log the pokemon data you are trying to display
+  console.log("Pokemon Data: ", pokemon);
+
   return (
     <SearchPageContainer>
-      {/* Include the banner at the top of the search page */}
-      <Banner />
+      {/* Add the banner at the top of the search page */}
+      <BannerContainer>
+        <Banner />
+      </BannerContainer>
 
       {/* Search form */}
       <PokeSearchForm onSearch={handleSearch} />
@@ -71,13 +67,13 @@ const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => 
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <SearchResultsContainer>
+        <div>
           {pokemon.length > 0 ? (
             pokemon.map((poke, index) => <PokeData key={index} pokemon={poke} />)
           ) : (
             <p>No Pokémon found.</p>
           )}
-        </SearchResultsContainer>
+        </div>
       )}
 
       {/* Pagination buttons */}
