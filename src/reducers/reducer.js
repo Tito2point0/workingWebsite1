@@ -17,14 +17,17 @@ const reducer = (state = initialState, action) => {
         loading: true,
         error: '',
       };
-    case FETCH_POKEMON_SUCCESS:
+      case FETCH_POKEMON_SUCCESS:
+        const { pokemon, next, previous } = action.payload;  // Destructure the payload
+     debugger;  
       return {
-        ...state,
-        loading: false,
-        pokemon: action.payload,
-        next: action.payload.next,
-        previous: action.payload.previous,
-      };
+          ...state,
+          loading: false,
+          pokemon,    // Store Pokémon list
+          next,       // Store the next page
+          previous,   // Store the previous page
+        };
+      
     case FETCH_POKEMON_FAILURE:
       return {
         ...state,

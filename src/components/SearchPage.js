@@ -3,25 +3,23 @@ import { connect } from 'react-redux';
 import PokeData from './PokeData';
 import { fetchPokemon } from '../actions/actions';
 import PokeSearchForm from './PokeSearchForm';
-import Banner from '../components/Banner'; // Import the Banner component
-import styled from 'styled-components'; // Use styled-components for responsive design
+import Banner from '../components/Banner';
+import styled from 'styled-components';
 
 // Create a styled container for the page
 const SearchPageContainer = styled.div`
-  width: 100%; /* Full width of the page */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 `;
 
-// Make sure the banner is responsive and takes full width
 const BannerContainer = styled.div`
-  width: 100%; /* Full width for the banner */
-  margin-bottom: 20px; /* Space between the banner and the rest of the page */
-
+  width: 100%;
+  margin-bottom: 20px;
   @media (max-width: 768px) {
-    margin-bottom: 15px; /* Adjust margin for mobile */
+    margin-bottom: 15px;
   }
 `;
 
@@ -30,15 +28,21 @@ const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => 
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetchPokemon(searchTerm, currentPage);
+    debugger;
+    // Only fetch Pokémon if searchTerm is not empty
+    if (searchTerm.trim()) {
+      fetchPokemon(searchTerm, currentPage);
+    }
   }, [searchTerm, currentPage, fetchPokemon]);
 
   const handleSearch = (term) => {
+    debugger;
     setSearchTerm(term);
-    setCurrentPage(1);
+    setCurrentPage(1);    // Reset to first page on new search
   };
 
   const handleNextPage = () => {
+    debugger
     if (next) {
       setCurrentPage((prevPage) => prevPage + 1);
     }
@@ -51,19 +55,19 @@ const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => 
   };
 
   // Log the pokemon data you are trying to display
-  console.log("Pokemon Data: ", pokemon);
+  console.log("Current Pokémon Data: ", pokemon);
+  console.log("Current Page: ", currentPage);
+  console.log("Next Page Available: ", next);
+  console.log("Previous Page Available: ", previous);
 
   return (
     <SearchPageContainer>
-      {/* Add the banner at the top of the search page */}
       <BannerContainer>
         <Banner />
       </BannerContainer>
 
-      {/* Search form */}
       <PokeSearchForm onSearch={handleSearch} />
 
-      {/* Loading message */}
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -76,7 +80,6 @@ const SearchPage = ({ pokemon = [], loading, next, previous, fetchPokemon }) => 
         </div>
       )}
 
-      {/* Pagination buttons */}
       <div>
         <button onClick={handlePreviousPage} disabled={!previous}>
           Previous
