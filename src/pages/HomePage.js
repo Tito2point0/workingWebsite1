@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import Title from "../components/Title";
 import Navigation from "../components/Navigation";
 import AboutMe from "../data/AboutMe";
+import blog1 from "../data/blog1";
 
 // Styled Components
 const PageContainer = styled.div`
@@ -124,10 +125,9 @@ const HomePage = () => {
   const [blogs, setBlogs] = useState([
     {
       id: 1,
-      title: "The Art of Blogging",
-      content:
-        "Blogging is an amazing way to share your ideas and thoughts with the world. It's a creative process that allows you to express yourself and connect with a global audience.",
-      author: "Jane Doe",
+      title: "Prismatic Madness: The Pokémon TCG Scalping Crisis",
+      content:blog1,
+      author: "Jason Vasquez",
       date: "January 20, 2025",
       image: "/1gengar.png",
       contentImage: "/5pik.jpg",
@@ -163,30 +163,36 @@ const HomePage = () => {
         <LayoutContainer>
           {/* Main Content */}
           <ContentContainer>
-            {blogs.map((blog) => (
-              <BlogPost key={blog.id}>
-                <BlogTitle>
-                  {blog.sprite && (
-                    <a href={blog.spriteLink} target="_blank" rel="noopener noreferrer">
-                      <img src={blog.sprite} alt={blog.spriteAlt} />
-                    </a>
-                  )}
-                  {blog.title}
-                </BlogTitle>
-                <AuthorSection>
-                  <AuthorImage src={blog.image} alt={blog.author} />
-                  <div>
-                    <p>{blog.author}</p>
-                    <PublishDate>{blog.date}</PublishDate>
-                  </div>
-                </AuthorSection>
-                <BlogContent>
-                  <p>{blog.content}</p>
-                  <img src={blog.contentImage} alt={`${blog.title} illustration`} />
-                </BlogContent>
-              </BlogPost>
-            ))}
-          </ContentContainer>
+  {blogs.map((blog) => (
+    <BlogPost key={blog.id}>
+      <BlogTitle>
+        {blog.sprite && (
+          <a href={blog.spriteLink} target="_blank" rel="noopener noreferrer">
+            <img src={blog.sprite} alt={blog.spriteAlt} />
+          </a>
+        )}
+        {blog.title}
+      </BlogTitle>
+      <AuthorSection>
+        <AuthorImage src={blog.image} alt={blog.author} />
+        <div>
+          <p>{blog.author}</p>
+          <PublishDate>{blog.date}</PublishDate>
+        </div>
+      </AuthorSection>
+      <BlogContent>
+        {/* Check if the content is a string or a component */}
+        {typeof blog.content === "string" ? (
+          <p>{blog.content}</p>
+        ) : (
+          <blog.content />
+        )}
+        <img src={blog.contentImage} alt={`${blog.title} illustration`} />
+      </BlogContent>
+    </BlogPost>
+  ))}
+</ContentContainer>
+
 
           {/* Sidebar */}
           <SidebarContainer>
