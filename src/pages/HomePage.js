@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Banner from "../components/Banner";
 import Title from "../components/Title";
 import Navigation from "../components/Navigation";
+import AboutMe from "../data/AboutMe";
 
 // Styled Components
 const PageContainer = styled.div`
@@ -99,10 +100,13 @@ const AboutSection = styled.div`
   margin-bottom: 20px;
 
   img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 120px; /* Set the size of the circular image */
+    height: 120px; /* Keep it equal to width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
     margin-bottom: 10px;
+    border: 3px solid #ddd; /* Optional border for better appearance */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for a modern look */
+    object-fit: cover; /* Ensures the image fits within the circle */
   }
 
   h3 {
@@ -187,11 +191,10 @@ const HomePage = () => {
           {/* Sidebar */}
           <SidebarContainer>
             <AboutSection>
-              <img src="https://via.placeholder.com/100" alt="Blogger Profile" />
+              <img src="/aboutme.png" alt="Blogger Profile" />
               <h3>About Me</h3>
               <p>
-                Hi, I'm Jane Doe, a passionate blogger who loves sharing insights
-                on technology, lifestyle, and more!
+                {AboutMe}
               </p>
             </AboutSection>
             <h3>Recent Posts</h3>
